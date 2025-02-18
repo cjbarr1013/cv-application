@@ -6,6 +6,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
+  eslintConfigPrettier,
   { ignores: ['node_modules/*', 'dist/*'] },
   {
     files: ['**/*.{js,jsx}'],
@@ -24,7 +25,6 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
     },
-    eslintConfigPrettier,
     rules: {
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
