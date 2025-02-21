@@ -1,0 +1,11 @@
+.dropdown {
+  border-radius: 0.25rem;
+}
+
+.content-options > .dropdown {
+  background-color: var(--color5);
+}
+
+.document-options > .dropdown {
+  background-color: var(--color2);
+}

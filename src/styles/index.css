@@ -1,3 +1,43 @@
+/* Global variables and fonts */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('../assets/fonts/Fraunces-VariableFont.woff2') format('woff2');
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fraunces-Italic';
+  src: url('../assets/fonts/Fraunces-Italic-VariableFont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-VariableFont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter-Italic';
+  src: url('../assets/fonts/Inter-Italic-VariableFont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+:root {
+  --color1: #e8eeed;
+  --color2: #ceb5a7;
+  --color3: #a17c6b;
+  --color4: #5b7b7a;
+  --color5: #3c887e;
+
+  --header-font: Fraunces, serif;
+  --body-font: Inter, sans-serif;
+}
+
 /* Reset */
 *,
 ::before,
@@ -7,8 +47,15 @@
 }
 
 html {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji';
+  font-family:
+    system-ui,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    /* Change font if you wish */ 'Apple Color Emoji',
+    'Segoe UI Emoji';
   font-size: 16px;
   tab-size: 4;
   -moz-text-size-adjust: none;
@@ -17,7 +64,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100vh; /* Change to height to make page always 100% */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -103,4 +150,27 @@ button,
   font: inherit;
 }
 
-/* Not Reset */
+/* Global styles */
+
+html {
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-font);
+  font-weight: 500;
+}
+
+footer {
+  font-family: var(--header-font);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.reset,
+.print {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.reset {
+  background-color: rgb(228, 40, 40);
+}
+
+.print {
+  background-color: rgb(174, 172, 172);
+}

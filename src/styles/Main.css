@@ -1,0 +1,43 @@
+main {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--color1);
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 550px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.25rem;
+  min-width: 300px;
+  width: 100%;
+}
+
+.options > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.document-btns {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.cv-preview {
+  min-width: 800px;
+  aspect-ratio: calc(8.5 / 11);
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 5px black;
+}
