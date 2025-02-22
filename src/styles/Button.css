@@ -1,6 +1,7 @@
 .reset,
 .print {
   width: 100%;
+  max-width: 300px;
   padding: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
