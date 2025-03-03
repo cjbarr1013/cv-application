@@ -36,5 +36,10 @@
   .options {
     width: 100%;
     max-width: 800px;
+    max-height: none;
+  }
+
+  .dropdown-content.show {
+    max-height: none;
   }
 }

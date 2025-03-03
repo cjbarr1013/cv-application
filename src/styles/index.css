@@ -28,14 +28,26 @@
 }
 
 :root {
-  --color1: #e8eeed;
-  --color2: #ceb5a7;
-  --color3: #a17c6b;
-  --color4: #5b7b7a;
-  --color5: #3c887e;
+  --color1: #29524a;
+  --color2: #c9e4de;
+  --color3: #f1f8f7;
+  --color4: #29524a;
+
+  --add-btn: green;
+  --del-btn: rgb(228, 40, 40);
+  --reset-btn: rgb(228, 40, 40);
+  --print-btn: rgb(174, 172, 172);
+
+  --cv-color: white;
 
   --header-font: Fraunces, serif;
-  --body-font: Inter, sans-serif;
+  --body-font: Inter, Roboto, sans-serif;
+
+  --light-font-color: white;
+  --dark-font-color: black;
+
+  --resume-width: 800px;
+  --ar: calc(8.5 / 11);
 }
 
 /* Reset */
@@ -47,15 +59,7 @@
 }
 
 html {
-  font-family:
-    system-ui,
-    'Segoe UI',
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    /* Change font if you wish */ 'Apple Color Emoji',
-    'Segoe UI Emoji';
+  font-family: var(--body-font);
   font-size: 16px;
   tab-size: 4;
   -moz-text-size-adjust: none;
@@ -164,13 +168,21 @@ h5,
 h6 {
   font-family: var(--header-font);
   font-weight: 500;
+  color: var(--light-font-color);
 }
 
 footer {
   font-family: var(--header-font);
+  color: var(--light-font-color);
 }
 
 button {
+  font-family: var(--header-font);
   border: none;
   cursor: pointer;
+}
+
+label {
+  font-weight: bold;
+  letter-spacing: 1.5px;
 }

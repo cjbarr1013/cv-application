@@ -1,3 +1,23 @@
+.simple-btn > img {
+  height: 1.5rem;
+  filter: invert(25%) sepia(21%) saturate(978%) hue-rotate(118deg)
+    brightness(91%) contrast(83%);
+  transition: all 0.3s ease-in-out;
+}
+
+.simple-btn:hover > img {
+  filter: invert(0%) sepia(100%) saturate(20%) hue-rotate(351deg)
+    brightness(95%) contrast(100%);
+}
+
+.simple-btn {
+  background-color: transparent;
+  color: var(--color1);
+  border: 2px solid var(--color1);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
 .reset,
 .print {
   width: 100%;
@@ -5,14 +25,27 @@
   padding: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
-  border: none;
-  border-radius: 0.25rem;
 }
 
-.reset {
-  background-color: rgb(228, 40, 40);
+.add-edu,
+.del-edu {
+  padding: 0.25rem 0.5rem;
 }
 
-.print {
-  background-color: rgb(174, 172, 172);
+.add-edu:hover {
+  background-color: var(--add-btn);
+  border-color: var(--add-btn);
+}
+
+.reset:hover,
+.del-edu:hover {
+  color: var(--dark-font-color);
+  background-color: var(--del-btn);
+  border-color: var(--del-btn);
+}
+
+.print:hover {
+  color: var(--dark-font-color);
+  background-color: var(--print-btn);
+  border-color: var(--print-btn);
 }

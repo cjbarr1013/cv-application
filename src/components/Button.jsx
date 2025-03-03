@@ -1,7 +1,18 @@
 import '../styles/Button.css';
 
-function Button(props) {
-  return <button className={props.className}>{props.text}</button>;
+function Button({
+  text = '',
+  className = '',
+  image = null,
+  altText = '',
+  handleClick,
+}) {
+  return (
+    <button className={'simple-btn ' + className} onClick={handleClick}>
+      {image && <img src={image} alt={altText}></img>}
+      {text}
+    </button>
+  );
 }
 
 export default Button;

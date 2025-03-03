@@ -1,7 +1,0 @@
-header {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--color5);
-}

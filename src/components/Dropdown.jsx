@@ -1,11 +1,27 @@
-import DropdownBtn from './DropdownBtn.jsx';
-import DropdownOpen from './DropdownOpen.jsx';
+import menuUp from '../assets/icons/menu-up.svg';
+import menuDown from '../assets/icons/menu-down.svg';
 import '../styles/Dropdown.css';
 
-function Dropdown(props) {
+function Dropdown({
+  open = false,
+  text = '',
+  openDirection = 'down',
+  children,
+  handleClick,
+}) {
   return (
-    <div className="dropdown">
-      <DropdownBtn text={props.text} arrowStart={props.arrowStart} />
+    <div className="dropdown" id={text.toLowerCase()}>
+      <button className="dropdown-btn" onClick={handleClick}>
+        <h2>{text}</h2>
+        <img
+          className={open ? 'rotate' : ''}
+          src={openDirection === 'down' ? menuDown : menuUp}
+          alt={`menu ${openDirection} arrow`}
+        ></img>
+      </button>
+      <div className={'dropdown-content' + (open ? ' show' : '')}>
+        {children}
+      </div>
     </div>
   );
 }

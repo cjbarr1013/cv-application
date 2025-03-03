@@ -1,11 +1,151 @@
 .dropdown {
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
+  background-color: var(--color3);
 }
 
-.content-options > .dropdown {
-  background-color: var(--color5);
+.content-options .dropdown-btn {
+  background-color: var(--color1);
 }
 
-.document-options > .dropdown {
-  background-color: var(--color2);
+.document-options .dropdown-btn {
+  background-color: var(--color4);
+}
+
+.dropdown-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border-radius: inherit;
+}
+
+.dropdown-btn > img {
+  height: 2rem;
+  filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(201deg)
+    brightness(107%) contrast(102%);
+  transition: transform 0.25s ease-out;
+}
+
+.dropdown-btn > img.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  padding: 2rem;
+  overflow-y: scroll;
+  scroll-padding-bottom: 1rem;
+}
+
+.dropdown-content > div {
+  display: flex;
+  width: 100%;
+}
+
+.dropdown-content.show {
+  display: flex;
+  animation: onClick 0.5s forwards;
+}
+
+@keyframes onClick {
+  0% {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+  }
+
+  50% {
+    padding: 2rem;
+    opacity: 0;
+  }
+
+  100% {
+    max-height: 700px;
+    padding: 2rem;
+    opacity: 1;
+  }
+}
+
+/* Specific to Content */
+.dropdown-content input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.contact-container {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-container > div,
+.edu-input-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.education-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.education-items > div {
+  display: flex;
+  padding: 2rem 0;
+  border-top: 6px double var(--color1);
+}
+
+.education-items > div:first-child {
+  padding-top: 0;
+  border: none;
+}
+
+.education-items > div:last-child {
+  padding-bottom: 0;
+}
+
+.edu-item-del-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+}
+
+.item-del-btn {
+  padding: 0;
+  background-color: transparent;
+}
+
+.item-del-btn > img {
+  height: 1.5rem;
+  background-color: none;
+  filter: invert(37%) sepia(85%) saturate(3580%) hue-rotate(340deg)
+    brightness(86%) contrast(110%);
+  transition: transform 0.2s linear;
+}
+
+.item-del-btn:hover > img {
+  transform: scale(1.2);
+}
+
+.edu-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.edu-btns {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
 }

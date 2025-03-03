@@ -2,7 +2,7 @@ main {
   display: flex;
   justify-content: center;
   padding: 2rem;
-  background-color: var(--color1);
+  background-color: var(--color2);
 }
 
 .content-container {
@@ -20,13 +20,16 @@ main {
   justify-content: space-between;
   gap: 0.25rem;
   min-width: 300px;
+  max-height: calc((1 / var(--ar)) * var(--resume-width));
   width: 100%;
 }
 
-.options > div {
+.content-options,
+.document-options {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  max-height: auto;
 }
 
 .document-btns {
@@ -36,9 +39,9 @@ main {
 }
 
 .cv-preview {
-  min-width: 800px;
-  aspect-ratio: calc(8.5 / 11);
-  background-color: white;
+  min-width: var(--resume-width);
+  aspect-ratio: var(--ar);
+  background-color: var(--cv-color);
   border: 1px solid black;
   box-shadow: 1px 1px 5px black;
 }
