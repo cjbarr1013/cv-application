@@ -27,6 +27,7 @@
 
   .content-container {
     flex-direction: column-reverse;
+    max-height: none;
   }
 
   .content-container > div {

@@ -1,0 +1,18 @@
+.my-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.my-input > input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  appearance: none;
+  outline: 1px solid black;
+}
+
+.my-input > input:focus {
+  outline: 3px solid blue;
+}

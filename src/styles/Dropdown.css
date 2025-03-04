@@ -34,8 +34,7 @@
 .dropdown-content {
   display: none;
   padding: 2rem;
-  overflow-y: scroll;
-  scroll-padding-bottom: 1rem;
+  overflow: auto;
 }
 
 .dropdown-content > div {
@@ -68,84 +67,89 @@
 }
 
 /* Specific to Content */
-.dropdown-content input {
-  width: 100%;
-  padding: 0.5rem;
-}
-
 .contact-container {
   flex-direction: column;
   gap: 1rem;
 }
 
-.contact-container > div,
-.edu-input-container > div {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.education-container {
+.edu-exp-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
 
-.education-items {
+.edu-exp-items {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.education-items > div {
+.edu-exp-items > div {
   display: flex;
   padding: 2rem 0;
-  border-top: 6px double var(--color1);
+  border-bottom: 6px double var(--color1);
 }
 
-.education-items > div:first-child {
+.edu-exp-items > div:first-child {
   padding-top: 0;
-  border: none;
 }
 
-.education-items > div:last-child {
-  padding-bottom: 0;
-}
-
-.edu-item-del-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75px;
-}
-
-.item-del-btn {
-  padding: 0;
-  background-color: transparent;
-}
-
-.item-del-btn > img {
-  height: 1.5rem;
-  background-color: none;
-  filter: invert(37%) sepia(85%) saturate(3580%) hue-rotate(340deg)
-    brightness(86%) contrast(110%);
-  transition: transform 0.2s linear;
-}
-
-.item-del-btn:hover > img {
-  transform: scale(1.2);
-}
-
-.edu-input-container {
+.edu-exp-input-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 100%;
 }
 
-.edu-btns {
+.edu-exp-btns {
   display: flex;
   justify-content: center;
   gap: 0.25rem;
+}
+
+.item-del-container,
+.subitem-del-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-del-container {
+  width: 75px;
+  padding-right: 10px;
+}
+
+.subitem-del-container {
+  width: 40px;
+  padding-right: 5px;
+}
+
+.resp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resp-container > fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resp-container > fieldset > div {
+  display: flex;
+}
+
+.resp-container input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.filler {
+  height: 1px;
+  width: 100%;
+  margin-top: -1.6rem;
+  color: var(--color3);
 }
