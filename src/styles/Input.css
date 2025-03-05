@@ -4,15 +4,32 @@
   gap: 0.5rem;
 }
 
-.my-input > input {
+.my-input > input,
+.my-input > select {
   width: 100%;
   padding: 0.5rem;
+  background-color: white;
   border-radius: 0.5rem;
   border: none;
   appearance: none;
   outline: 1px solid black;
 }
 
-.my-input > input:focus {
+.my-input > input:focus,
+.my-input > select:focus {
+  outline: 3px solid blue;
+}
+
+.resp-container input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: none;
+  appearance: none;
+  outline: 1px solid black;
+}
+
+.resp-container input:focus {
   outline: 3px solid blue;
 }

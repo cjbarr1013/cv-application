@@ -39,10 +39,10 @@ main {
   gap: 0.25rem;
 }
 
-.cv-preview {
+.resume-preview {
   min-width: var(--resume-width);
   aspect-ratio: var(--ar);
-  background-color: var(--cv-color);
+  background-color: var(--resume-color);
   border: 1px solid black;
   box-shadow: 1px 1px 5px black;
 }

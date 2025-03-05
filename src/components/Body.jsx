@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Dropdown from './Dropdown.jsx';
 import Input from './Input.jsx';
-import userData from '../data.js';
 import Button from './Button.jsx';
+import Resume from './Resume.jsx';
+import userData from '../data.js';
 import plus from '../assets/icons/plus.svg';
 import minus from '../assets/icons/minus.svg';
 import '../styles/Body.css';
@@ -11,6 +12,9 @@ function Body() {
   const [openDropdownID, setOpenDropdownID] = useState('contact');
   const [eduItemDelShowing, setEduItemDelShowing] = useState(false);
   const [expItemDelShowing, setExpItemDelShowing] = useState(false);
+  const [layout, setLayout] = useState(1);
+  const [font, setFont] = useState('Inter');
+  const [color, setColor] = useState('#FFFFFF');
   const [userInfo, setUserInfo] = useState(userData);
 
   function handleDropdownClick(e) {
@@ -166,6 +170,18 @@ function Body() {
       ...userInfo,
       experience: experienceObjs,
     });
+  }
+
+  function handleLayoutChange(e) {
+    setLayout(e.target.value);
+  }
+
+  function handleFontChange(e) {
+    setFont(e.target.value);
+  }
+
+  function handleColorChange(e) {
+    setColor(e.target.value);
   }
 
   return (
@@ -420,14 +436,45 @@ function Body() {
               text="Formatting"
               openDirection="up"
               handleClick={handleDropdownClick}
-            ></Dropdown>
+            >
+              <div className="formatting-container">
+                <div className="my-input">
+                  <label htmlFor="layout">Layout</label>
+                  <select name="layout" id="layout">
+                    <option value="layout-1">Layout 1</option>
+                    <option value="layout-2">Layout 2</option>
+                    <option value="layout-3">Layout 3</option>
+                  </select>
+                </div>
+                <Input
+                  label="Color"
+                  id="color"
+                  type="color"
+                  value={color}
+                  handleChange={(e) => handleColorChange(e)}
+                ></Input>
+                <div className="my-input">
+                  <label htmlFor="font">Font</label>
+                  <select name="font" id="font">
+                    <option value="font-1">Font 1</option>
+                    <option value="font-2">Font 2</option>
+                    <option value="font-3">Font 3</option>
+                  </select>
+                </div>
+              </div>
+            </Dropdown>
             <div className="document-btns">
               <Button text="RESET" className="reset" />
               <Button text="PRINT" className="print" />
             </div>
           </div>
         </div>
-        <div className="cv-preview"></div>
+        <Resume
+          layout={layout}
+          font={font}
+          color={color}
+          userData={userData}
+        ></Resume>
       </div>
     </main>
   );
