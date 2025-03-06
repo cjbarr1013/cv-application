@@ -13,7 +13,7 @@ function Body() {
   const [eduItemDelShowing, setEduItemDelShowing] = useState(false);
   const [expItemDelShowing, setExpItemDelShowing] = useState(false);
   const [layout, setLayout] = useState(1);
-  const [font, setFont] = useState('Inter');
+  const [font, setFont] = useState('font-2');
   const [color, setColor] = useState('#FFFFFF');
   const [userInfo, setUserInfo] = useState(userData);
 
@@ -439,26 +439,19 @@ function Body() {
             >
               <div className="formatting-container">
                 <div className="my-input">
-                  <label htmlFor="layout">Layout</label>
-                  <select name="layout" id="layout">
-                    <option value="layout-1">Layout 1</option>
-                    <option value="layout-2">Layout 2</option>
-                    <option value="layout-3">Layout 3</option>
-                  </select>
-                </div>
-                <Input
-                  label="Color"
-                  id="color"
-                  type="color"
-                  value={color}
-                  handleChange={(e) => handleColorChange(e)}
-                ></Input>
-                <div className="my-input">
                   <label htmlFor="font">Font</label>
-                  <select name="font" id="font">
-                    <option value="font-1">Font 1</option>
-                    <option value="font-2">Font 2</option>
-                    <option value="font-3">Font 3</option>
+                  <select
+                    name="font"
+                    id="font"
+                    onChange={(e) => handleFontChange(e)}
+                  >
+                    <option value="font-1">Arial</option>
+                    <option value="font-2" selected="selected">
+                      Inter
+                    </option>
+                    <option value="font-3">Tahoma</option>
+                    <option value="font-4">Times New Roman</option>
+                    <option value="font-5">Verdana</option>
                   </select>
                 </div>
               </div>
@@ -469,12 +462,7 @@ function Body() {
             </div>
           </div>
         </div>
-        <Resume
-          layout={layout}
-          font={font}
-          color={color}
-          userData={userData}
-        ></Resume>
+        <Resume font={font} userInfo={userInfo}></Resume>
       </div>
     </main>
   );

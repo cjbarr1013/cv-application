@@ -39,6 +39,11 @@
   --print-btn: rgb(174, 172, 172);
 
   --resume-color: white;
+  --resume-font-1: Arial, sans-serif;
+  --resume-font-2: Inter, sans-serif;
+  --resume-font-3: Tahoma, serif;
+  --resume-font-4: 'Times New Roman', serif;
+  --resume-font-5: Verdana, sans-serif;
 
   --header-font: Fraunces, serif;
   --body-font: Inter, Roboto, sans-serif;
@@ -48,6 +53,11 @@
 
   --resume-width: 800px;
   --ar: calc(8.5 / 11);
+  --resume-height: calc((1 / var(--ar)) * var(--resume-width));
+  --resume-font-size-1: 32px;
+  --resume-font-size-2: 20px;
+  --resume-font-size-3: 16px;
+  --resume-padding: 3rem;
 }
 
 /* Reset */
@@ -168,6 +178,9 @@ h5,
 h6 {
   font-family: var(--header-font);
   font-weight: 500;
+}
+
+header {
   color: var(--light-font-color);
 }
 
@@ -180,6 +193,19 @@ button {
   font-family: var(--header-font);
   border: none;
   cursor: pointer;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url('../assets/icons/menu-down.svg') no-repeat;
+  background-position: right 0.5rem top 50%;
+  background-size: 1.5rem;
+}
+
+select::-ms-expand {
+  display: none;
 }
 
 label,
@@ -197,6 +223,7 @@ fieldset {
   padding: 0;
 }
 
+:focus,
 :focus-visible {
-  outline: 3px solid blue;
+  outline: 2px solid blue;
 }

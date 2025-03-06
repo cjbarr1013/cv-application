@@ -5,18 +5,58 @@
 }
 
 @media (max-width: 600px) {
+  :root {
+    --resume-width: 304px !important;
+    --resume-font-size-1: 12.16px !important;
+    --resume-font-size-2: 7.6px !important;
+    --resume-font-size-3: 6.08px !important;
+    --resume-padding: 1.14rem !important;
+  }
+
   .resume-preview {
-    min-width: 304px !important;
+    gap: 0.76rem !important;
+  }
+
+  .resume-contact,
+  .resume-edu,
+  .resume-exp,
+  .resume-edu > div,
+  .resume-exp > div {
+    gap: 0.19rem !important;
+  }
+
+  .resume-exp > div > div {
+    gap: 0.095rem !important;
   }
 }
 
 @media (max-width: 864px) {
-  main {
-    padding: 1rem 0.5rem;
+  :root {
+    --resume-width: 584px;
+    --resume-font-size-1: 23.36px;
+    --resume-font-size-2: 14.6px;
+    --resume-font-size-3: 11.68px;
+    --resume-padding: 2.19rem;
   }
 
   .resume-preview {
-    min-width: 584px;
+    gap: 1.46rem;
+  }
+
+  .resume-contact,
+  .resume-edu,
+  .resume-exp,
+  .resume-edu > div,
+  .resume-exp > div {
+    gap: 0.365rem;
+  }
+
+  .resume-exp > div > div {
+    gap: 0.18rem;
+  }
+
+  main {
+    padding: 1rem 0.5rem;
   }
 }
 
@@ -42,5 +82,9 @@
 
   .dropdown-content.show {
     max-height: none;
+  }
+
+  .resume-preview {
+    min-width: 0;
   }
 }

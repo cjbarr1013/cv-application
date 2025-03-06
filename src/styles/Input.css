@@ -17,7 +17,7 @@
 
 .my-input > input:focus,
 .my-input > select:focus {
-  outline: 3px solid blue;
+  outline: 2px solid blue;
 }
 
 .resp-container input {
@@ -31,5 +31,5 @@
 }
 
 .resp-container input:focus {
-  outline: 3px solid blue;
+  outline: 2px solid blue;
 }

@@ -1,51 +1,72 @@
 let userData = {
-  name: 'Cameron Barr',
-  email: 'cjbarr1013@gmail.com',
-  phone: '3303248723',
-  address: '1943 Dogwood Square NE Bolivar, Ohio 44612',
+  name: 'John Johnson III',
+  email: 'itz_ya_boi_jj3@gmail.com',
+  phone: '(555)-320-2456',
+  address: '748 Westinghouse Blvd. Columbus, OH 43085',
   education: [
     {
-      school: 'University of Akron',
-      degree: "Bachelor's in Mechanical Engineering",
+      school: 'Columbus State Community College',
+      degree: 'Baking Certificate',
       gradDate: '2019-05',
       id: crypto.randomUUID(),
     },
     {
-      school: 'University of Akron',
-      degree: "Bachelor's in Mechanical Engineering",
-      gradDate: '2019-05',
+      school: "St. John's High School",
+      degree: '??????????',
+      gradDate: '2017-05',
       id: crypto.randomUUID(),
     },
   ],
   experience: [
     {
-      company: 'Meteor Sealing Systems',
-      position: 'Process Engineer',
-      startDate: '2019-11',
-      endDate: '2021-10',
+      company: 'Self-Employed',
+      position: 'Independent Sales Specialist',
+      startDate: '2016-09',
+      endDate: '2024-12',
       responsibilities: [
         {
-          text: 'Troubleshooting and maintenance of various machines utilizing pneumatics, electronics, and hydraulics.',
+          text: 'Developed and maintained a loyal, repeat customer base through word-of-mouth marketing and referrals.',
           id: crypto.randomUUID(),
         },
         {
-          text: 'Trained technicians and operators on troubleshooting methods and best operating practices.',
+          text: 'Managed sourcing, pricing, and delivery logistics to ensure customer satisfaction and maximize profits.',
           id: crypto.randomUUID(),
         },
         {
-          text: 'Developed, reviewed, and corrected control plans and FMEAs for various manufacturing processes.',
+          text: 'Operated within a highly competitive, fast-moving marketplace while maintaining discretion and professionalism',
           id: crypto.randomUUID(),
         },
         {
-          text: 'Implemented corrective actions on the production floor to resolve different quality issues.',
+          text: 'Negotiated complex transactions and resolved disputes effectively to maintain strong business relationships.',
           id: crypto.randomUUID(),
         },
         {
-          text: 'Wrote and implemented SWIs for various manufacturing processes.',
+          text: 'Adapted quickly to shifting regulations and market trends to sustain consistent revenue growth.',
+          id: crypto.randomUUID(),
+        },
+      ],
+      id: crypto.randomUUID(),
+    },
+    {
+      company: 'Petsmart',
+      position: 'Sales Representative',
+      startDate: '1972-03',
+      endDate: '2016-09',
+      responsibilities: [
+        {
+          text: 'Delivered customized sales solutions, tailoring offerings to meet diverse customer needs.',
           id: crypto.randomUUID(),
         },
         {
-          text: 'Performed several industrial engineering duties including time studies, run @ rates, floor layouts, and process flows.',
+          text: 'Exceeded sales targets through persuasive communication and a deep understanding of customer demand.',
+          id: crypto.randomUUID(),
+        },
+        {
+          text: 'Managed inventory and pricing strategies to optimize profitability.',
+          id: crypto.randomUUID(),
+        },
+        {
+          text: 'Handled financial transactions with accuracy and accountability.',
           id: crypto.randomUUID(),
         },
       ],

@@ -1,0 +1,101 @@
+.resume-preview {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  gap: 2rem;
+  min-width: var(--resume-width);
+  width: var(--resume-width);
+  max-height: var(--resume-height);
+  aspect-ratio: var(--ar);
+  padding: var(--resume-padding);
+  color: black;
+  background-color: var(--resume-color);
+  border: 1px solid black;
+  box-shadow: 1px 1px 5px black;
+  overflow-y: hidden;
+}
+
+.resume-preview h1 {
+  font-size: var(--resume-font-size-1);
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.resume-preview h2 {
+  font-size: var(--resume-font-size-2);
+  font-family: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.resume-preview p,
+.resume-exp li {
+  font-size: var(--resume-font-size-3);
+  font-family: inherit;
+}
+
+.font-1 {
+  font-family: var(--resume-font-1);
+}
+
+.font-2 {
+  font-family: var(--resume-font-2);
+}
+
+.font-3 {
+  font-family: var(--resume-font-3);
+}
+
+.font-4 {
+  font-family: var(--resume-font-4);
+}
+
+.font-5 {
+  font-family: var(--resume-font-5);
+}
+
+.resume-preview ul {
+  list-style: disc;
+}
+
+.resume-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resume-contact > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.35;
+}
+
+.resume-edu,
+.resume-exp {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resume-edu > div,
+.resume-exp > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resume-edu > div > div {
+  line-height: 1.35;
+}
+
+.resume-exp > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.resume-exp > div > div > div {
+  line-height: 1.35;
+}
