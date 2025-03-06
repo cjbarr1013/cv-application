@@ -7,13 +7,13 @@ let userData = {
     {
       school: 'Columbus State Community College',
       degree: 'Baking Certificate',
-      gradDate: '2019-05',
+      gradDate: '1972-12',
       id: crypto.randomUUID(),
     },
     {
       school: "St. John's High School",
-      degree: '??????????',
-      gradDate: '2017-05',
+      degree: 'High School Diploma',
+      gradDate: '1970-05',
       id: crypto.randomUUID(),
     },
   ],

@@ -4,6 +4,7 @@ import Input from './Input.jsx';
 import Button from './Button.jsx';
 import Resume from './Resume.jsx';
 import userData from '../data.js';
+import blankData from '../dataBlank.js';
 import plus from '../assets/icons/plus.svg';
 import minus from '../assets/icons/minus.svg';
 import '../styles/Body.css';
@@ -12,9 +13,7 @@ function Body() {
   const [openDropdownID, setOpenDropdownID] = useState('contact');
   const [eduItemDelShowing, setEduItemDelShowing] = useState(false);
   const [expItemDelShowing, setExpItemDelShowing] = useState(false);
-  const [layout, setLayout] = useState(1);
   const [font, setFont] = useState('font-2');
-  const [color, setColor] = useState('#FFFFFF');
   const [userInfo, setUserInfo] = useState(userData);
 
   function handleDropdownClick(e) {
@@ -98,7 +97,6 @@ function Body() {
     let experienceObjs = [...userInfo.experience];
     let newObj = { ...experienceObjs[index] };
     if (subIndex !== null) {
-      console.log(newObj);
       newObj[subItem][subIndex].text = e.target.value;
     } else {
       newObj[subItem] = e.target.value;
@@ -172,16 +170,12 @@ function Body() {
     });
   }
 
-  function handleLayoutChange(e) {
-    setLayout(e.target.value);
-  }
-
   function handleFontChange(e) {
     setFont(e.target.value);
   }
 
-  function handleColorChange(e) {
-    setColor(e.target.value);
+  function handleResetClick() {
+    setUserInfo(blankData);
   }
 
   return (
@@ -346,7 +340,7 @@ function Body() {
                             type="month"
                             value={item.startDate}
                             handleChange={(e) =>
-                              handleEducationChange(e, index, 'startDate')
+                              handleExperienceChange(e, index, 'startDate')
                             }
                           ></Input>
                           <Input
@@ -355,7 +349,7 @@ function Body() {
                             type="month"
                             value={item.endDate}
                             handleChange={(e) =>
-                              handleEducationChange(e, index, 'endDate')
+                              handleExperienceChange(e, index, 'endDate')
                             }
                           ></Input>
                           <div className="resp-container">
@@ -457,7 +451,11 @@ function Body() {
               </div>
             </Dropdown>
             <div className="document-btns">
-              <Button text="RESET" className="reset" />
+              <Button
+                text="RESET"
+                className="reset"
+                handleClick={handleResetClick}
+              />
               <Button text="PRINT" className="print" />
             </div>
           </div>

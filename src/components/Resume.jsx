@@ -7,7 +7,9 @@ function Resume({ font, userInfo }) {
       <div className="resume-contact">
         <h1>{userInfo.name}</h1>
         <div>
-          <p>{`${userInfo.phone} | ${userInfo.email}`}</p>
+          {(userInfo.phone !== '' || userInfo.email !== '') && (
+            <p>{`${userInfo.phone} | ${userInfo.email}`}</p>
+          )}
           <p>{userInfo.address}</p>
         </div>
       </div>
@@ -18,11 +20,16 @@ function Resume({ font, userInfo }) {
             return (
               <div key={item.id}>
                 <p>
-                  <b>{item.degree}</b>, <span>{item.school}</span>
+                  {(item.degree !== '' || item.school !== '') && (
+                    <>
+                      <b>{item.degree}</b>, <span>{item.school}</span>
+                    </>
+                  )}
                 </p>
                 <p>
                   <i>
-                    {format(addMonths(new Date(item.gradDate), 1), 'MMMM y')}
+                    {item.gradDate !== '' &&
+                      format(addMonths(new Date(item.gradDate), 1), 'MMMM y')}
                   </i>
                 </p>
               </div>
@@ -34,19 +41,36 @@ function Resume({ font, userInfo }) {
         <h2>Experience</h2>
         <div>
           {userInfo.experience.map((item) => {
+            const startDate =
+              item.startDate !== '' ?
+                format(addMonths(new Date(item.startDate), 1), 'MMMM y')
+              : '';
+            const endDate =
+              item.endDate !== '' ?
+                format(addMonths(new Date(item.endDate), 1), 'MMMM y')
+              : '';
+
             return (
               <div key={item.id}>
                 <div>
                   <p>
-                    <b>{item.position}</b>, {item.company}
+                    {(item.position !== '' || item.company !== '') && (
+                      <>
+                        <b>{item.position}</b>, <span>{item.company}</span>
+                      </>
+                    )}
                   </p>
                   <p>
-                    <i>{`${format(addMonths(new Date(item.startDate), 1), 'MMMM y')} - ${format(addMonths(new Date(item.endDate), 1), 'MMMM y')}`}</i>
+                    {(startDate || endDate) && (
+                      <i>{`${startDate} - ${endDate}`}</i>
+                    )}
                   </p>
                 </div>
                 <ul>
                   {item.responsibilities.map((subitem) => {
-                    return <li key={subitem.id}>{subitem.text}</li>;
+                    if (subitem.text !== '') {
+                      return <li key={subitem.id}>{subitem.text}</li>;
+                    }
                   })}
                 </ul>
               </div>
