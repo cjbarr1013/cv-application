@@ -32,7 +32,7 @@
 }
 
 .reset,
-.print {
+.download {
   width: 100%;
   max-width: 300px;
   padding: 1rem;
@@ -70,7 +70,7 @@
   border-color: var(--del-btn);
 }
 
-.print:hover {
+.download:hover {
   color: var(--dark-font-color);
   background-color: var(--print-btn);
   border-color: var(--print-btn);

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 import Dropdown from './Dropdown.jsx';
 import Input from './Input.jsx';
 import Button from './Button.jsx';
@@ -13,7 +15,7 @@ function Body() {
   const [openDropdownID, setOpenDropdownID] = useState('contact');
   const [eduItemDelShowing, setEduItemDelShowing] = useState(false);
   const [expItemDelShowing, setExpItemDelShowing] = useState(false);
-  const [font, setFont] = useState('font-2');
+  const [font, setFont] = useState('font-1');
   const [userInfo, setUserInfo] = useState(userData);
 
   function handleDropdownClick(e) {
@@ -176,6 +178,23 @@ function Body() {
 
   function handleResetClick() {
     setUserInfo(blankData);
+  }
+
+  function handleDownloadClick() {
+    const resume = document.querySelector('.resume-preview');
+    const pdf = new jsPDF('p', 'in', [8.5, 11]);
+    const options = {
+      scale: 2,
+    };
+
+    html2canvas(resume, options).then((canvas) => {
+      const imgData = canvas.toDataURL('image/jpeg');
+      const imgWidth = pdf.internal.pageSize.getWidth();
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
+      pdf.save('resume.pdf');
+    });
   }
 
   return (
@@ -439,10 +458,10 @@ function Body() {
                     id="font"
                     onChange={(e) => handleFontChange(e)}
                   >
-                    <option value="font-1">Arial</option>
-                    <option value="font-2" selected="selected">
-                      Inter
+                    <option value="font-1" selected="selected">
+                      Arial
                     </option>
+                    <option value="font-2">Inter</option>
                     <option value="font-3">Tahoma</option>
                     <option value="font-4">Times New Roman</option>
                     <option value="font-5">Verdana</option>
@@ -456,7 +475,11 @@ function Body() {
                 className="reset"
                 handleClick={handleResetClick}
               />
-              <Button text="PRINT" className="print" />
+              <Button
+                text="DOWNLOAD"
+                className="download"
+                handleClick={handleDownloadClick}
+              />
             </div>
           </div>
         </div>
